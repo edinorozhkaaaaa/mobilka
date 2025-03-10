@@ -6,6 +6,7 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -33,15 +34,15 @@ import kotlinx.coroutines.delay
 @Composable
 fun SplashScreen(navController: NavHostController) {  // Добавим callback для перехода на следующий экран
     val scale = remember {
-        Animatable(0.5f)
+        Animatable(0.7f)
     }
 
     // Анимация и задержка
     LaunchedEffect(key1 = true) {
         scale.animateTo(
-            targetValue = 3f,
+            targetValue = 0.7f,
             animationSpec = tween(
-                durationMillis = 1500,
+                durationMillis = 100,
             )
         )
 
@@ -61,7 +62,7 @@ fun SplashScreen(navController: NavHostController) {  // Добавим callback
                 .background(Color.Black), // Черный фон
             contentAlignment = Alignment.Center
         ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
                 Image(
                     painter = painterResource(id = R.drawable.i),
                     contentDescription = "Logo",
