@@ -1,12 +1,14 @@
 package com.example.restraunt.presentation.screens.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -36,35 +38,26 @@ import androidx.navigation.compose.rememberNavController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TextFieldEmail(value: String, error: Boolean, onvaluechange: (String) -> Unit) {
-    val focusManager = LocalFocusManager.current
-    var text by rememberSaveable(stateSaver = TextFieldValue.Saver) {
-        mutableStateOf(TextFieldValue("email", TextRange(0, 7)))
-    }
-
     OutlinedTextField(
         value = value,
         onValueChange = { onvaluechange(it) },
         textStyle = MaterialTheme.typography.displayMedium,
-        isError = !error,
-         colors = TextFieldDefaults.outlinedTextFieldColors(
-            unfocusedTextColor = Color.Gray,
-            unfocusedBorderColor = Color.Yellow,
-            focusedLabelColor = Color.Yellow,
+        isError = error,
+        colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = Color.Yellow,
-            containerColor = Color.DarkGray,
-            disabledTextColor = Color.White,
+            unfocusedBorderColor = Color.Blue,
+            focusedLabelColor = Color.Yellow,
+            unfocusedLabelColor = Color.Blue
         ),
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Email,
             imeAction = ImeAction.Next
        ),
-        keyboardActions = KeyboardActions(
-            onNext = { focusManager.moveFocus(FocusDirection.Down) }
-    ),
         shape = RoundedCornerShape(20.dp),
         label = { Text("email", fontSize = 20.sp, color = Color.Yellow) }, // Текст подсказки внутри поля
         modifier = Modifier
     )
+
 
 }
 

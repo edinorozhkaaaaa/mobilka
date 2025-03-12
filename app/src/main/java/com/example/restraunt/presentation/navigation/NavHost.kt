@@ -12,6 +12,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.restraunt.presentation.screens.SignInSreen.SingInScreen
 import com.example.restraunt.presentation.screens.SplashScreen.SplashScreen
 
 
@@ -28,6 +29,10 @@ fun NavHost() {
                 composable(NavigationRoutes.SPLASH)
                 {
                     SplashScreen(navController)
+                }
+                composable(NavigationRoutes.SIGNIN)
+                {
+                    SingInScreen((navController))
                 }
 
 
