@@ -70,13 +70,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
+//Supabase
     implementation(platform(libs.bom))
     implementation(libs.postgrest.kt)
     implementation(libs.auth.kt)
     implementation(libs.realtime.kt)
     implementation (libs.storage.kt)
 
-
+//Navigation
     implementation (libs.androidx.navigation.compose)
 }
