@@ -77,6 +77,11 @@ dependencies {
     implementation(libs.realtime.kt)
     implementation (libs.storage.kt)
 
+    //Ktor
+    implementation(libs.ktor.client.android)
+
+    
+
 //Navigation
     implementation (libs.androidx.navigation.compose)
 }

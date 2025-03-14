@@ -34,6 +34,9 @@ fun NavHost() {
                 {
                     SingInScreen((navController))
                 }
+                composable(NavigationRoutes.SIGNUP) {
+
+                }
 
 
 

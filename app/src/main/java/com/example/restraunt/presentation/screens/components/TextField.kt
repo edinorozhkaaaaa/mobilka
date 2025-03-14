@@ -15,7 +15,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import com.example.restraunt.ui.theme.Beige
 
 
 @Composable
@@ -26,10 +26,10 @@ fun TextFieldEmail(value: String, error: Boolean, onvaluechange: (String) -> Uni
         textStyle = MaterialTheme.typography.displayMedium,
         isError = error,
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = Color.White,
-            unfocusedBorderColor = Color.White,
-            focusedLabelColor = Color.White,
-            unfocusedLabelColor = Color.White,
+            focusedBorderColor = Beige,
+            unfocusedBorderColor = Beige,
+            focusedLabelColor = Beige,
+            unfocusedLabelColor = Beige,
             
         ),
         keyboardOptions = KeyboardOptions(
@@ -37,30 +37,29 @@ fun TextFieldEmail(value: String, error: Boolean, onvaluechange: (String) -> Uni
             imeAction = ImeAction.Next
        ),
         shape = RoundedCornerShape(14.dp),
-        label = { Text("email", fontSize = 20.sp, color = Color.White) }, // Текст подсказки внутри поля
+        label = { Text("email", fontSize = 20.sp, color = Beige) }, // Текст подсказки внутри поля
         modifier = Modifier
     )
 }
 
 @Composable
-fun TextFieldPassword(value: String, error: Boolean, onvaluechange: (String) -> Unit) {
+fun TextFieldPassword(value: String, onvaluechange: (String) -> Unit) {
     OutlinedTextField(
         value = value,
         onValueChange = { onvaluechange(it) },
         textStyle = MaterialTheme.typography.displayMedium,
-        isError = error,
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = Color.White,
-            unfocusedBorderColor = Color.White,
-            focusedLabelColor = Color.White,
-            unfocusedLabelColor = Color.White,
+            focusedBorderColor = Beige,
+            unfocusedBorderColor = Beige,
+            focusedLabelColor = Beige,
+            unfocusedLabelColor = Beige,
         ),
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Email,
             imeAction = ImeAction.Next
         ),
         shape = RoundedCornerShape(14.dp),
-        label = { Text("пароль", fontSize = 20.sp, color = Color.White) },
+        label = { Text("пароль", fontSize = 20.sp, color = Beige) },
         modifier = Modifier
     )
 }

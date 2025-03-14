@@ -36,6 +36,7 @@ import com.example.restraunt.presentation.navigation.NavigationRoutes
 import kotlinx.coroutines.delay
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
+import com.example.restraunt.ui.theme.Beige
 
 
 @SuppressLint("UnusedBoxWithConstraintsScope")
@@ -96,7 +97,7 @@ fun SplashScreen(navController: NavHostController) {
 
             Text("Loading" + ".".repeat(dotCount),
                 fontSize = 50.sp,
-                color = Color.White,
+                color = Beige ,
                 fontFamily = FontFamily.Cursive
             )
             }
